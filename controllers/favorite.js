@@ -54,7 +54,6 @@ export const deleteFavorite = async(req, res)=>{
         }
       
         const filteredFavorite = user.favoriteProducts.filter(id =>id.toString() != productID.toString());
-        console.log(filteredFavorite)
 
         user.favoriteProducts = filteredFavorite
 

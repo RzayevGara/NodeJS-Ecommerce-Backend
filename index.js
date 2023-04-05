@@ -39,7 +39,7 @@ app.use('/', Payment)
 
 
 app.get('/', (req,res)=>{
-    res.json({message: 'test test'})
+    res.json({message: 'Server Running'})
 })
 
 const PORT = process.env.PORT || 3000

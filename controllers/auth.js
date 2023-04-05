@@ -135,13 +135,13 @@ export const forgotPassword = async(req, res)=>{
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              user: 'emil19071997',
-              pass: 'zenmzapzyadijvlr'
+              user: process.env.NODEMAILER_USERNAME,
+              pass: process.env.NODEMAILER_PASS
             }
           });
 
           const mailOptions = {
-            from: 'emil19071997',
+            from: process.env.NODEMAILER_USERNAME,
             to: email,
             subject: 'Password Reset Request',
             text: `Use the verification code below to reset your password: ${otp}`
@@ -149,7 +149,6 @@ export const forgotPassword = async(req, res)=>{
 
           transporter.sendMail(mailOptions, function(error, info) {
             if (error) {
-              console.log(error);
               return res.status(500).send('An error occurred while sending the verification code.');
             } else {
                   res.status(200).json({

@@ -1,5 +1,5 @@
 import express from 'express'
-import {addToCart, getCart} from '../controllers/cart.js'
+import {addToCart, getCart, deleteFromCart} from '../controllers/cart.js'
 
 const router = express.Router()
 
@@ -10,5 +10,9 @@ router.get('/cart', getCart)
 
 //add to cart
 router.post('/cart', addToCart)
+
+
+// delete from cart
+router.delete('/cart', deleteFromCart)
 
 export default router
