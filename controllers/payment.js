@@ -1,5 +1,5 @@
 import stripe from 'stripe'
-const stripeInstance = stripe('sk_test_51KzJJfIg2uXdi1sJen93b75sKg2Wi0mGhlXdMv3BVWnt8jFeHYiJBe85menvhmDUq47tdtHHKziDeylO2xrfsjOc00fjmlWWWY');
+const stripeInstance = stripe(process.env.STRIPE_SECRET_KEY);
 import Auth from '../models/auth.js'
 import Products from '../models/products.js'
 
@@ -45,6 +45,21 @@ export const checkout = (req, res)=>{
         .catch(err=>{
             return res.status(404).send({ error: 'Product not found' });
         })
-        
-
 }
+
+
+export const getOrder= async(req, res)=>{
+  try {
+    const userID = req.auth
+    const user = await Auth.findById(userID).populate({path: 'orders.productId', model: 'Products'}).select('orders')
+          
+    if (!user) {
+      return res.status(404).send({ error: 'User not found' });
+    }
+
+    res.status(200).json({user});
+
+  } catch (error) {
+    return res.status(404).send({ error: error.message });
+  }
+} 
