@@ -141,7 +141,6 @@ export const getCart = async(req, res)=>{
 
         res.status(201).json({
             status: "OK",
-            message: "product added successfully",
             cart
         })
     }
@@ -199,7 +198,7 @@ export const updateQuantity = async(req, res)=>{
             await cart.save()
             res.status(201).json({
                 status: "OK",
-                message: "product added successfully",
+                message: "product updated successfully",
                 cart
             })
         }else{

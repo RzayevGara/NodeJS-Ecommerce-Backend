@@ -4,7 +4,7 @@ import checkJwt from '../middleware/auth.js'
 
 const router = express.Router()
 
-//post
+// make payment
 router.post('/payment', checkJwt, checkout)
 
 

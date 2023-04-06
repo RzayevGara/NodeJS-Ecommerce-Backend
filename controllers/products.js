@@ -65,7 +65,6 @@ export const getProducts = async(req, res)=>{
 
         return res.json({
             status: "OK",
-            message: "product find",
             products
         })
     }
@@ -83,7 +82,6 @@ export const getProductByID = async(req, res)=>{
 
         return res.status(201).json({
             status: "OK",
-            message: "product find",
             product
         })
     }

@@ -34,7 +34,7 @@ export const checkout = (req, res)=>{
           user.orders.push(order);
           await user.save();
           
-          res.status(200).send({ message: 'Payment succeeded!', user });
+          res.status(200).json({ message: 'Payment succeeded!', user });
 
               }
                 catch (error) {
@@ -43,7 +43,7 @@ export const checkout = (req, res)=>{
 
         })
         .catch(err=>{
-            return res.status(404).send({ error: 'Product not found' });
+            return res.status(404).json({ error: 'Product not found' });
         })
 }
 
