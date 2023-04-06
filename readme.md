@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-To get started with this project, clone the repository and install the dependencies:
+- To get started with this project, clone the repository and install the dependencies:
 
 ```
 git clone https://github.com/RzayevGara/NodeJS-Ecommerce-Backend.git
@@ -17,7 +17,7 @@ git clone https://github.com/RzayevGara/NodeJS-Ecommerce-Backend.git
 npm install
 ```
 
-## Then, create a .env file and add your environment variables:
+- Then, create a .env file and add your environment variables:
 ```
 PORT = 3000
 MONGO_URI = your mongodb uri
@@ -28,7 +28,7 @@ NODEMAILER_PASS = create `App Passwords` in your email adress
 STRIPE_SECRET_KEY = stripe secret key
 ```
 
-## You can start the application with the following command:
+- You can start the application with the following command:
 ```
 npm start
 ```
