@@ -31,7 +31,7 @@ const AuthSchema = new mongoose.Schema({
     orders: [{
         productId: [{
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
+          ref: 'Products',
           required: true,
         }],
         amount: {

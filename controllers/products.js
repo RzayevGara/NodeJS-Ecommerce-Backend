@@ -2,7 +2,14 @@ import Product from '../models/products.js'
 
 export const createProduct = async(req, res)=>{
     try{
-        const {name, permalink, category, description, price, color, image, assets} = req.body
+        let {name, permalink, category, description, price, color, image, assets} = req.body
+        if(category){
+            category = category.map(item=>item.toLowerCase());
+        }
+        if(color){
+            color = color.map(c => ({ color_name: c.color_name.toLowerCase() }))
+        }
+
         const product = await Product.create({name, permalink, category, description, price, color,  image, assets})
 
         res.status(201).json({
@@ -25,11 +32,11 @@ export const getProducts = async(req, res)=>{
         let sortQuery = {};
 
         if (category) {
-            query.category = { $in: category.split(',')};
+            query.category = { $in: category.toLowerCase().split(',')};
         }
         
         if (color) {
-            query['color.color_name'] = { $in: color.split(',')};
+            query['color.color_name'] = { $in: color.toLowerCase().split(',')};
         }
 
         if (minimumPrice && maximumPrice) {
@@ -38,7 +45,7 @@ export const getProducts = async(req, res)=>{
             query['price.raw'] = { $gte: minimumPrice };
           } else if (maximumPrice) {
             query['price.raw'] = { $lte: maximumPrice };
-          }
+        }
 
         switch (sortBy){
             case 'alphabetic':

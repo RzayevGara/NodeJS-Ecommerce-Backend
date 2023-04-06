@@ -16,11 +16,11 @@ const productSchema = new mongoose.Schema({
     },
     category: {
         type: Array,
-        require: true,
+        default: []
     },
     description: {
         type: String,
-        require: true,
+        default: ""
     },
     price: {
         type: [priceSchema],
@@ -28,11 +28,11 @@ const productSchema = new mongoose.Schema({
     },
     color: {
         type: [colorSchema],
-        require: true,
+        default: []
     },
     image: {
         type: String,
-        require: true,
+        default: ""
     },
     assets: {
         type: [assetsSchema],
