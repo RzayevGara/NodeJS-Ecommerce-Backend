@@ -2,8 +2,8 @@
 
 ### This project is a backend application built with [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/), and [Mongoose](https://mongoosejs.com/).
 
-## Cocumentation of API's you can use:
-https://documenter.getpostman.com/view/22932465/2s93RZM9x2
+## Documentation of API's you can use:
+### [Documentation](https://documenter.getpostman.com/view/22932465/2s93RZM9x2)
 
 
 ## Getting Started
@@ -32,6 +32,9 @@ STRIPE_SECRET_KEY = stripe secret key
 ```
 npm start
 ```
+
+## You can create, edit and delete Products and Users using AdminJS dashboard.
+AdminJS Dashboard: ```https://{your_url}/admin```
 
 ## Used in this Project:
 ```
