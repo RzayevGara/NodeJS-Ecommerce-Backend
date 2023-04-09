@@ -3,18 +3,15 @@
 ### This project is a backend application built with [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/), and [Mongoose](https://mongoosejs.com/).
 
 ## Documentation of API's you can use:
-### [Documentation](https://documenter.getpostman.com/view/22932465/2s93RZM9x2)
+### https://documenter.getpostman.com/view/22932465/2s93RZM9x2
 
 
 ## Getting Started
 
-- To get started with this project, clone the repository and install the dependencies:
+- To get started with this project, clone the repository:
 
 ```
 git clone https://github.com/RzayevGara/NodeJS-Ecommerce-Backend.git
-```
-```
-npm install
 ```
 
 - Then, create a .env file and add your environment variables:
@@ -28,9 +25,12 @@ NODEMAILER_PASS = create `App Passwords` in your email adress
 STRIPE_SECRET_KEY = stripe secret key
 ```
 
-- You can start the application with the following command:
+- You can start the application with the following command. But first make sure you have Docker installed on your computer.
 ```
-npm start
+docker build -t my-node-app .
+```
+```
+docker run -p 3000:3000 my-node-app
 ```
 
 ## You can create, edit and delete Products and Users using AdminJS dashboard.
